@@ -1,0 +1,15 @@
+---
+const { data } = Astro.props;
+const items = Object.entries(data);
+console.log("🚀 ~ items:", items);
+---
+
+<ul>
+  {
+    items.map(([label, value]) => (
+      <li>
+        {label}: {value}
+      </li>
+    ))
+  }
+</ul>

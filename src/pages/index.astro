@@ -1,0 +1,30 @@
+---
+import { db } from "astro:db";
+import ContactForm from "../components/ContactForm.astro";
+import ContactGrid from "../components/ContactGrid.astro";
+import { Contact } from "astro:db";
+
+const contacts = await db.select().from(Contact);
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-custom_light">
+    <main class="grid place-content-center gap-12 min-h-screen">
+      <!-- <ContactGrid data={contacts} /> -->
+      <ContactForm />
+    </main>
+  </body>
+</html>

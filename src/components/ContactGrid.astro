@@ -1,0 +1,9 @@
+---
+import ContactList from "./ContactList.astro";
+
+const { data } = Astro.props;
+---
+
+<div class="flex gap-6 flex-wrap">
+  {data.map((d: any) => <ContactList data={d} />)}
+</div>
