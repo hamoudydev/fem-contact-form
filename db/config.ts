@@ -8,7 +8,6 @@ const Contact = defineTable({
     email_address: column.text(),
     query_type: column.text(),
     message: column.text(),
-    consent: column.boolean(),
   },
 });
 

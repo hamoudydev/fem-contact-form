@@ -15,7 +15,6 @@ export const server = {
       email_address: z.string().email(),
       query_type: z.enum(["general-enquiry", "support-request"]),
       message: z.string(),
-      consent: z.boolean(),
     }),
     handler: async (data) => {
       await db.insert(Contact).values(data);
